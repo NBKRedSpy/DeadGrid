@@ -42,7 +42,7 @@ SetKeyDelay, 10,50
 			return
 		}
 
-		rm := new RestoreMouse(50)
+		rm := new RestoreMouse(true)
 
 		mouseMove startX, startY, 50
 		click down
@@ -112,7 +112,7 @@ class RestoreMouse
 	Restore() {
 
 		if(blockMouseInput) {
-			BlockInput, MouseMove
+			BlockInput, On
 		}
 
 		x := this.mouseX
@@ -122,7 +122,7 @@ class RestoreMouse
 
 		if(this.blockMouseInput)
 		{
-			BlockInput, MouseMoveOff
+			BlockInput, Off
 		}
 	}
 
